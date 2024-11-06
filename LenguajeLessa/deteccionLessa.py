@@ -6,7 +6,7 @@ import tensorflow as tf
 model = tf.keras.models.load_model("modelo_vocales.keras")
 
 # Etiquetas de las clases
-class_names = ['A', 'E']
+class_names = ['A', 'E', 'I', 'O']
 confidence_threshold = 0.9  # Umbral de confianza
 
 # Iniciar la cámara
@@ -16,6 +16,7 @@ while True:
     # Leer imagen de la cámara
     ret, frame = cap.read()
     if not ret:
+        print("Error al leer la cámara. Finalizando...")
         break
 
     # Preprocesar la imagen para el modelo
@@ -35,8 +36,8 @@ while True:
     cv2.putText(frame, f"Prediccion: {predicted_class}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
     cv2.imshow("Detección de Vocales", frame)
 
-    # Salir con la tecla 'q'
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    # Agregar un pequeño delay para reducir la carga del sistema
+    if cv2.waitKey(10) & 0xFF == ord('q'):
         break
 
 # Liberar la cámara y cerrar ventanas

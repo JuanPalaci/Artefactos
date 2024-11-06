@@ -3,9 +3,9 @@ import os
 import time
 
 # Configura el número de fotos a tomar
-desde = 21
-numero_de_fotos = 29 # Puedes cambiar este número
-carpeta_destino = 'C:\\Users\\juanc\\OneDrive\\Documentos\\ImagenesLessa\\A'
+desde = 200
+numero_de_fotos = 250 # Puedes cambiar este número
+carpeta_destino = 'C:\\Users\\juanc\\OneDrive\\Documentos\\ImagenesLessa\\O'
 
 
 # Crea la carpeta si no existe
@@ -28,7 +28,7 @@ else:
             break
 
         # Guarda la imagen en el directorio de destino
-        nombre_archivo = os.path.join(carpeta_destino, f'A_{i+1}.jpg')
+        nombre_archivo = os.path.join(carpeta_destino, f'O_{i+1}.jpg')
         cv2.imwrite(nombre_archivo, frame)
         
         print(f'Foto {i+1} guardada como {nombre_archivo}')
