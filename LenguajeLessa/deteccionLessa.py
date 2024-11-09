@@ -6,7 +6,7 @@ import tensorflow as tf
 model = tf.keras.models.load_model("modelo_vocales.keras")
 
 # Etiquetas de las clases
-class_names = ['A', 'E', 'I', 'O']
+class_names = ['A', 'E', 'I', 'O','U']
 confidence_threshold = 0.9  # Umbral de confianza
 
 # Iniciar la cámara

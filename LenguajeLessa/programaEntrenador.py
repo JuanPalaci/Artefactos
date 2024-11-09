@@ -34,7 +34,7 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.MaxPooling2D((2, 2)),
     tf.keras.layers.Flatten(),
     tf.keras.layers.Dense(128, activation='relu'),
-    tf.keras.layers.Dense(4, activation='softmax')  # 4 salidas para las letras A E, I y O
+    tf.keras.layers.Dense(5, activation='softmax')  # 5 salidas para las letras A, E, I , O,  U
 ])
 
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
